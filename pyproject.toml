@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "travel-buddy-adk"
+version = "0.1.0"
+description = "Prototype university travel assistant using Google ADK"
+requires-python = ">=3.12"
+dependencies = [
+    "google-adk==2.11.0",
+    "google-genai==2.29.0",
+    "opentelemetry-api==1.42.1",
+    "opentelemetry-sdk==1.42.1",
+    "opentelemetry-exporter-gcp-trace>=1.9,<2",
+    "pgvector==0.4.2",
+    "SQLAlchemy[asyncio]>=2.0,<2.1",
+    "psycopg[binary]>=3.2,<4",
+    "alembic>=1.14,<2",
+    "mcp>=1,<2",
+]
+
+[project.scripts]
+travel-session-setup = "travel_agent.session_setup:main"
+travel-policy-evaluate = "travel_agent.evaluation.run:main"
+travel-policy-admin = "travel_agent.policy.admin:main"
+travel-policy-ingest = "travel_agent.policy.ingest:main"
+travel-review = "travel_agent.review_cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["travel_agent", "travel_agent.*"]
+exclude = ["tests", "tests.*"]
+
+[tool.setuptools.package-data]
+"travel_agent.evaluation" = ["cases.json"]

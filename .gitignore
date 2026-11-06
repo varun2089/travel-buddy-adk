@@ -1,0 +1,15 @@
+.venv/
+.env
+**/.env
+.env
+!.env
+__pycache__/
+*.pyc
+.adk/
+*.egg-info/
+build/
+dist/
+.idea/
+.DS_Store
+/backups
+/evaluations/results/
