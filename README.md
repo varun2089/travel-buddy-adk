@@ -1,6 +1,6 @@
 # Travel Buddy
 
-Prototype university travel assistant using Google ADK, a local MCP estimates server and PostgreSQL. Prices and policies are synthetic; submission is simulated.
+A travel assistant using Google ADK, a local MCP estimates server and PostgreSQL. Prices and policies are synthetic; submission is simulated.
 
 ## Setup
 
